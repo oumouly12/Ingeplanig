@@ -1,0 +1,15 @@
+export interface Details {
+    id_tache :number,
+    nom_tache: string,
+     nom_projet : string ,
+    data_create : Date,
+    debut_tache: Date,
+    fin_tache: Date,
+    id_geom: number,
+    libelle : string,
+    geometrie : any,
+    debut_projet: Date,
+    fin_projet:Date;
+    heure_ouverture: Date
+    heure_fermeture: Date
+}

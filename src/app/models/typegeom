@@ -1,0 +1,4 @@
+interface Typegeom {
+  type: string;
+  coordinates: number[];
+}

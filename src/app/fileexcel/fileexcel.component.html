@@ -1,0 +1,103 @@
+<div >
+  <form #formprojet="ngForm" (ngSubmit)="postprojet()">
+
+    <table>
+      <tr>
+        <td class="p" >
+          <input name="nom_projet" class="form-control" id="nom_projet" type="text"  [(ngModel)]="addprojet.nom_projet">
+        </td>
+        <td >
+          
+          <input name="data_create" class="form-control" id="data_create" type="hidden" [(ngModel)]="addprojet.data_create">
+        </td>
+        <tr>
+          <td >
+            <label>Date de debut</label>
+            <input name="debut_projet" class="form-control" id="debut_projet" type="date" [(ngModel)]="addprojet.debut_projet">
+          </td>
+          <td >
+            <label>date de fin</label>
+            <input name="fin_projet" class="form-control" id="fin_projet" type="date" [(ngModel)]="addprojet.fin_projet">
+          </td>
+        </tr>
+        <tr>
+          <td >
+            <label> Heure d'Ouverture </label>
+            <input name="ouverture" class="form-control" id="ouverture" type="time" [(ngModel)]="addprojet.heure_ouverture">
+          </td>
+          <td >
+            <label>Heure de Fermeture </label>
+            <input name="fermeture" class="form-control" id="fermeture" type="time" [(ngModel)]="addprojet.heure_fermeture">
+          </td>
+        </tr>
+      
+     
+    </table>
+    <button type="submit" class="btn btn-primary">Créer un nouveau projet</button>
+
+  </form>
+</div>
+
+      
+ <div *ngIf="isformsubmitted">
+<h1> Entrer votre liste de taches !</h1>
+
+
+<form id="file-upload-form" class="uploader">
+    <input id="file-upload" type="file"
+    (change)="fileUpload($event)"
+    name="fileUpload" accept=".xls, .xlsx"/>
+    <label for="file-upload " id="file-drag"></label>
+</form> 
+
+
+ </div>
+<div *ngIf="formtache">
+
+      
+<form  #form="ngForm" (ngSubmit)="onSubmit()">
+ 
+  <table>
+   
+    <tr>
+      <td>Nom</td>
+      <td>Nom projet</td>
+      <td>Date_debut</td>
+      <td> Date_fin</td>
+      <td>Gometrie</td>
+      
+    </tr>
+    <tr *ngFor="let tache of convertedJSON">
+      
+      <td >
+        <input name="nom" class="form-control" id="nom" type="text"  value="{{tache.nom}}" >
+      </td>
+      <td >
+        <input name="nom_projet" class="form-control" id="nom_projet" type="text" value="{{nom_projet}}">
+      </td>
+      <td >
+        <input name="debut_tache" class="form-control" id="debut_tache" type="text" value="{{tache.debut_tache}}">
+      </td>
+      <td >
+        <input name="fin_tache" class="form-control" id="debut_tache" type="text" value="{{tache.fin_tache}}">
+      </td>
+      <td >
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Associer a la bonne geometrie</mat-label>
+          <mat-select name="geomid" type="table" class="form-control" multiple>
+            <mat-option *ngFor="let topping of geom"   (click)="addgeom(topping, tache , addprojet.nom_projet)" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    
+    </tr>
+     
+    </table>
+    <button type="submit" class="btn btn-primary">enregistrer</button>
+  </form>
+  
+</div> 
+
+
+

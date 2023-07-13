@@ -1,0 +1,99 @@
+<!-- 
+<div>
+  <div class="map-container">
+    <div class="map-frame">
+      <div id="map"></div>
+    </div>
+  </div> 
+  <div> 
+ <div>
+
+
+
+
+
+
+
+<h2>Animated Sidenav Example</h2>
+<ng-container *ngFor="let tache of projets">
+  <span style="font-size:15px;cursor:pointer" (click)="openNav()">{{tache.nom_tache}}</span><br>
+ </ng-container> -->
+
+
+
+
+
+
+
+
+
+
+ 
+<div>
+  <div class="map-container">
+    <div class="map-frame">
+      <div id="map"></div>
+    </div>
+  </div> 
+</div>
+          
+         <div id="mytache"> 
+          <h2>Animated Sidenav Example</h2>
+          <p> Detail Tache</p>
+          <ng-container *ngFor="let tache of projets">
+            <span style="font-size:15px;cursor:pointer" (click)="selected(tache.id_tache)" >{{tache.nom_tache}}</span><br>
+          </ng-container>
+        </div>
+<div id="mySidenav" class="sidenav"  *ngIf="selected">
+  <a  class="closebtn" (click)="closeNav()">&times;</a>
+  <table id="customers">
+    <tr>
+      <td>Dates</td>
+      <td>Ouverture</td>
+      <td>Fermeture</td>
+    </tr>
+    <tr class="date" *ngFor="let date of dates">
+      <td>{{ date | date: 'dd/MM/YYYY'}}</td>
+      <td >{{ ouverture }}</td>
+      <td >{{ fermeture }}</td>
+      </tr>
+    </table>
+  </div> 
+ 
+
+
+
+
+   
+    <!-- <mat-sidenav-container id="example-container">
+      <mat-sidenav  #sidenav mode="side" position="end" >
+       <div id="container">
+         <button mat-button id="exit" (click)="sidenav.toggle()">X</button>
+   
+       <table id="customers">
+         <tr>
+           <td>Dates</td>
+           <td>Ouverture</td>
+           <td>Fermeture</td>
+         </tr>
+         <tr class="date" *ngFor="let date of dates">
+           <td>{{ date | date: 'dd/MM/YYYY'}}</td>
+           <td >{{ ouverture }}</td>
+           <td >{{ fermeture }}</td>
+           </tr>
+       
+       </table>
+     </div>
+    </mat-sidenav>
+   
+   <mat-sidenav-content >
+    <div class="octsep">
+      <h1>Du 11 oct au 15 sep</h1>
+     </div>
+    <ng-container *ngFor="let tache of projets"> 
+      <p>{{tache.debut_tache |date: 'dd/MM/YYYY'}}</p>
+       <p><button mat-button type="click"(click)="sidenav.toggle();Selected(tache.id_tache)">{{tache.nom_tache}}</button></p>
+    </ng-container>
+       
+       </mat-sidenav-content>
+ </mat-sidenav-container>   -->
